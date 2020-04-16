@@ -1,0 +1,243 @@
+@import url("https://use.typekit.net/svh7xye.css");
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+@import url("shared.scss");
+* {
+  box-sizing: border-box; }
+
+html {
+  height: 100%; }
+
+body {
+  font-family: source-code-pro, monospace;
+  margin: 0;
+  padding-top: auto;
+  height: 100%;
+  z-index: -1;
+  display: grid;
+  grid-template-rows: 3.5rem auto fit-content(8rem);
+  grid-template-areas: "header" "main" "footer"; }
+
+@supports (display: grid) {
+  body {
+    display: grid;
+    grid-template-rows: 3.5rem auto fit-content(8rem);
+    grid-template-areas: "header" "main" "footer";
+    padding-top: 0;
+    height: 100%;
+    z-index: -1; } }
+.main-header {
+  margin: 0 auto;
+  grid-area: header;
+  width: 100%;
+  height: 3.5rem;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: transparent;
+  padding: .5rem 1rem;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0.75px 15px 1px rgba(128, 128, 128, 0.733); }
+
+.main-header__title {
+  font-family: 'VT323', monospace;
+  text-decoration: none;
+  color: #c7c7c7;
+  font-size: 3rem;
+  height: auto; }
+
+.main-header__title-blinker {
+  font-size: 3.5rem;
+  margin-left: -1.75rem;
+  animation: blinkingTitleText 1s steps(5, start) infinite; }
+
+@keyframes blinkingTitleText {
+  to {
+    visibility: hidden; } }
+.home-button {
+  width: 2.75rem;
+  height: auto;
+  cursor: pointer;
+  padding: 0 auto;
+  margin: 0 auto;
+  vertical-align: middle; }
+
+.toggle-button {
+  width: 2.75rem;
+  height: auto;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding-top: 0;
+  padding-bottom: 0;
+  vertical-align: middle; }
+
+.toggle-button:focus {
+  outline: none; }
+
+.toggle-button__bar {
+  width: 100%;
+  height: 0.2rem;
+  background: #c7c7c7;
+  display: block;
+  margin: 0.5rem 0; }
+
+.mobile-nav {
+  display: none; }
+
+.main-nav {
+  display: inline-flex;
+  justify-content: flex-start;
+  z-index: 1; }
+
+.main-nav__items {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.main-nav__item--home {
+  vertical-align: middle; }
+
+main {
+  grid-area: main;
+  height: 100%;
+  width: 100%;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.message-box__container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto; }
+
+.message-box {
+  background: radial-gradient(farthest-corner at 75% 70%, white, #7abab2);
+  margin: 0 auto;
+  height: 30rem;
+  width: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 1px 1px 2px 2px rgba(105, 105, 105, 0.692);
+  border-style: outset; }
+
+.message-box__header {
+  width: 100%;
+  height: 1.75rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: grey; }
+
+.message-box__header--line {
+  width: 75%;
+  height: 0.15rem;
+  margin: auto;
+  background: lightgray; }
+
+.message-box__header--title {
+  width: 25%;
+  align-self: center;
+  justify-self: center;
+  margin: 0 auto;
+  font-family: px_sans_nouveaux;
+  font-size: .75rem;
+  text-align: center; }
+
+.message-box__text {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  border-right: 2px solid rgba(9, 255, 0, 0.75);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typewriter 1s steps(12) 1s normal both, blinkingMainText 1s steps(5, start) infinite normal; }
+
+.message-box__button--container {
+  display: flex;
+  flex-direction: row; }
+
+.message-box__buttons {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1.5rem;
+  z-index: 2; }
+
+.message-box__button--next,
+.message-box__button--back {
+  margin: 0 2rem;
+  padding: .2rem 1rem;
+  border-style: outset;
+  background: lightgrey;
+  font-family: px_sans_nouveaux;
+  font-size: .65rem;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); }
+
+.message-box__button--next:active,
+.message-box__button--back:active {
+  background: #b3b3b3;
+  border-style: inset;
+  transform: translateY(2px); }
+
+.message-box__button--next:hover,
+.message-box__button--back:hover {
+  cursor: crosshair; }
+
+footer {
+  grid-area: footer; }
+
+.main-footer__links {
+  text-decoration: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end; }
+
+.main-footer__link {
+  margin: 0 .5rem; }
+
+.main-footer__link a {
+  color: #a5e645;
+  text-decoration: none;
+  cursor: vertical-text; }
+
+@keyframes typewriter {
+  from {
+    width: 0; }
+  to {
+    width: inherit; } }
+@keyframes blinkingMainText {
+  from {
+    border-right-color: rgba(9, 255, 0, 0.75); }
+  to {
+    border-right-color: transparent; } }
+@media (min-width: 80rem) {
+  .message-box {
+    width: 50%; } }
+@media (min-width: 64rem) and (max-width: 80rem) {
+  .message-box {
+    width: 75%; } }
+@media (min-width: 48rem) and (max-width: 64rem) {
+  .message-box {
+    width: 48rem; } }
+@media (min-width: 30rem) and (max-width: 48rem) {
+  .message-box {
+    width: 30rem; } }
+@media (max-width: 30rem) {
+  .message-box {
+    width: 95%; } }
+
+/*# sourceMappingURL=main.css.map */
