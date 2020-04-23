@@ -218,7 +218,7 @@ footer {
   from {
     width: 0; }
   to {
-    width: inherit; } }
+    width: 15.5rem; } }
 @keyframes blinkingMainText {
   from {
     border-right-color: rgba(9, 255, 0, 0.75); }

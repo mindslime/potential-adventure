@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "../../Desktop/ey copy"
+		},
+		{
+			"path": "../../Downloads/animations-4-assignment-1-solution"
+		},
+		{
+			"path": "../../Downloads/Intro to SASS"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "A-birthday-website",
+		"git.ignoreLimitWarning": true
+	}
+}
